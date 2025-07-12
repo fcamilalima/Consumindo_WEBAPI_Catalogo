@@ -11,13 +11,15 @@ namespace Consumindo_API_Catalogo;
 
 public class AcessaAPIService
 {
+
     public async Task<List<Produto>> GetAllProdutos(string URI, AccessToken accessToken)
     {
         using (var client = new HttpClient())
         {
             GetHeaderTokenAuthorization(client, accessToken);
 
-            using (var response = await client.GetAsync(URI)) {
+            using (var response = await client.GetAsync($"{URI}"))
+            {
                 if (response.IsSuccessStatusCode)
                 {
                     var ProdutoJsonString = await response.Content.ReadAsStringAsync();
@@ -52,7 +54,8 @@ public class AcessaAPIService
         }
     }
 
-    public async Task<string> AddProduto(string URI, AccessToken accessToken, Produto produto) {
+    public async Task<string> AddProduto(string URI, AccessToken accessToken, Produto produto)
+    {
         using (var client = new HttpClient())
         {
             GetHeaderTokenAuthorization(client, accessToken);
