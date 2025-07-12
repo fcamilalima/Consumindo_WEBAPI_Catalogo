@@ -51,7 +51,6 @@ namespace Consumindo_API_Catalogo
             label1.Size = new Size(174, 26);
             label1.TabIndex = 0;
             label1.Text = "URI - Web API : ";
-            label1.Click += label1_Click;
             // 
             // txtURI
             // 
@@ -119,6 +118,7 @@ namespace Consumindo_API_Catalogo
             btnProdutosPorId.TabIndex = 5;
             btnProdutosPorId.Text = "Obter Produto Por ID";
             btnProdutosPorId.UseVisualStyleBackColor = false;
+            btnProdutosPorId.Click += btnProdutosPorId_Click;
             // 
             // btnIncluirProduto
             // 
@@ -132,6 +132,7 @@ namespace Consumindo_API_Catalogo
             btnIncluirProduto.TabIndex = 6;
             btnIncluirProduto.Text = "Incluir Produto";
             btnIncluirProduto.UseVisualStyleBackColor = false;
+            btnIncluirProduto.Click += btnIncluirProduto_Click;
             // 
             // btnAtualizarProduto
             // 
@@ -145,7 +146,7 @@ namespace Consumindo_API_Catalogo
             btnAtualizarProduto.TabIndex = 7;
             btnAtualizarProduto.Text = "Atualizar Produto";
             btnAtualizarProduto.UseVisualStyleBackColor = false;
-            btnAtualizarProduto.Click += button4_Click;
+            btnAtualizarProduto.Click += btnAtualizarProduto_Click;
             // 
             // btnDeletarProdutos
             // 
@@ -159,6 +160,7 @@ namespace Consumindo_API_Catalogo
             btnDeletarProdutos.TabIndex = 8;
             btnDeletarProdutos.Text = "Deletar Produtos";
             btnDeletarProdutos.UseVisualStyleBackColor = false;
+            btnDeletarProdutos.Click += btnDeletarProdutos_Click;
             // 
             // Form1
             // 
@@ -181,15 +183,6 @@ namespace Consumindo_API_Catalogo
             PerformLayout();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
 
         #endregion
