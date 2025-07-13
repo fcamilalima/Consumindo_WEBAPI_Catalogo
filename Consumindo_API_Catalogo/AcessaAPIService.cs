@@ -102,7 +102,7 @@ public class AcessaAPIService
             GetHeaderTokenAuthorization(client, accessToken);
             client.BaseAddress = new Uri(URI);
 
-            HttpResponseMessage responseMessage = await client.DeleteAsync($"{URI}/{codProduto}");
+            HttpResponseMessage responseMessage = await client.DeleteAsync($"{URI}{codProduto}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 return "Produto excluído com sucesso!";
