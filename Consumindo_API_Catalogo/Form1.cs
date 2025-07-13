@@ -102,7 +102,7 @@ public partial class Form1 : Form
         {
             try
             {
-                URI = txtURI.Text + "/" + codigoProduto;
+                URI = txtURI.Text + codigoProduto;
                 var accessaAPI = new AcessaAPIService();
                 Produto produto = await accessaAPI.GetProdutoById(URI, accessToken);
                 bindingSource.DataSource = produto;
@@ -110,7 +110,7 @@ public partial class Form1 : Form
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao obter produto: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
@@ -154,12 +154,12 @@ public partial class Form1 : Form
         if (codigoProduto != -1)
         {
             produto.ProdutoID = codigoProduto;
-            URI = txtURI.Text + "/" + produto.ProdutoID;
+            URI = txtURI.Text + produto.ProdutoID;
             try
             {
                 var acessaAPI = new AcessaAPIService();
                 var resultado = await acessaAPI.UpdateProduto(URI, accessToken, produto);
-                MessageBox.Show("Produto atualizado com sucesso! ID: " + resultado, "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Produto atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
